@@ -43,7 +43,12 @@ module LinkedIn
 
     def get(path, options={})
       url, params, headers = prepare_connection_params(path, options)
-
+      puts "===Skcript-LinkedIn==="
+      puts "Path: #{path}"
+      puts "URL: #{url}"
+      puts "Params: #{params}"
+      puts "Headers: #{headers}"
+      puts "===Skcript-LinkedIn==="
       response = @connection.get(url, params, headers)
 
       return Mash.from_json(response.body)
